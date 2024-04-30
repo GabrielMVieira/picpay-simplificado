@@ -1,0 +1,10 @@
+CREATE TABLE users (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    document VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    user_type SMALLINT CHECK (user_type BETWEEN 0 AND 1),
+    balance NUMERIC(38, 2) DEFAULT 0
+);
+
